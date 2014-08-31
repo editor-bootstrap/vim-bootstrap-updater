@@ -8,13 +8,14 @@ python sys.path.append(vim.eval('expand("<sfile>:h")'))
 " --------------------------------
 "  Function(s)
 " --------------------------------
-function! TemplateExample()
+function! VimBootstrapUpdate()
 python << endOfPython
 
-from vim_bootstrap_updater import vim_bootstrap_updater_example
+from vim_bootstrap_updater import update
 
-for n in range(5):
-    print(vim_bootstrap_updater_example())
+response, content = update()
+
+print response
 
 endOfPython
 endfunction
@@ -22,4 +23,4 @@ endfunction
 " --------------------------------
 "  Expose our commands to the user
 " --------------------------------
-command! Example call TemplateExample()
+command! VimBootstrapUpdate call VimBootstrapUpdate()
