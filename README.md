@@ -32,3 +32,8 @@ Next, while in `vim`, just execute `:VimBootstrapUpdate`
 ## License
 
 See `LICENSE`
+
+## Thanks
+
+This plugin was started using the awesome [vim-plugin-starter-kit](https://github.com/JarrodCTaylor/vim-plugin-starter-kit) written by [JarrodCTaylor](https://github.com/JarrodCTaylor).
+
