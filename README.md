@@ -22,6 +22,8 @@ This is a proof of concept!
 
 ## Usage
 
+`vim-boostsrap` is a prereq. Go [here](http://vim-bootstrap.appspot.com/) first.
+
 Add something like `:let vim_bootstrap_langs = "python,ruby,html,javascript"` in side of your
 `.vimrc.local` file.
 
