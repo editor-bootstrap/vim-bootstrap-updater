@@ -16,7 +16,6 @@ Use your plugin manager of choice.
   - Add `Plug 'https://github.com/sherzberg/vim-bootstrap-updater'` to .vimrc
   - Run `:PlugInstall`
 
-## Todo
+## Status
 
-1. Write a plugin
-2. Write documentation
+This is a proof of concept!
