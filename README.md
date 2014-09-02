@@ -19,3 +19,14 @@ Use your plugin manager of choice.
 ## Status
 
 This is a proof of concept!
+
+## Usage
+
+Add something like `:let vim_bootstrap_langs = "python,ruby,html,javascript"` in side of your
+`.vimrc.local` file.
+
+Next, while in `vim`, just execute `:VimBootstrapUpdate`
+
+## License
+
+See `LICENSE`
