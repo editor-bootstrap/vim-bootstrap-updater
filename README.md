@@ -20,7 +20,7 @@ Next, while in `vim`, just execute `:VimBootstrapUpdate`
 
 ## License
 
-See `LICENSE`
+See [LICENSE](/LICENSE)
 
 ## Thanks
 
