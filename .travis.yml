@@ -2,4 +2,6 @@ language: python
 python:
   - "2.7"
 
-script: pip install tox && tox
+script: pip install tox coveralls && tox
+after_success:
+  coveralls
