@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/sherzberg/vim-bootstrap-updater.svg?branch=master)](https://travis-ci.org/sherzberg/vim-bootstrap-updater)
+[![Coverage Status](https://coveralls.io/repos/sherzberg/vim-bootstrap-updater/badge.png)](https://coveralls.io/r/sherzberg/vim-bootstrap-updater)
 
 # vim-bootstrap-updater
 
