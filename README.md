@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sherzberg/vim-bootstrap-updater.svg?branch=master)](https://travis-ci.org/sherzberg/vim-bootstrap-updater)
+
 # vim-bootstrap-updater
 
 ## Status
