@@ -13,7 +13,8 @@ python << endOfPython
 
 from vim_bootstrap_updater import update
 
-response, content = update()
+langs = vim.eval('g:vim_bootstrap_langs').split(',')
+response, content = update(langs)
 
 print response
 

@@ -1,26 +1,36 @@
 import os
-import vim
 
-from httplib2 import Http
-from urllib import urlencode
+from httplib import HTTPConnection
 
 
-def update():
-    langs = vim.eval('g:vim_bootstrap_langs').split(',')
+def vimrc_path():
+    return os.path.expanduser('~/.vimrc')
 
-    data = []
-    for lang in langs:
-        data.append('langs={}'.format(lang.strip()))
 
-    data = '&'.join(data)
+def _generate_params(langs):
+    params = '&'.join(['langs={}'.format(lang.strip()) for lang in langs])
+    return params
 
-    response, content = Http().request(
-        'http://vim-bootstrap.appspot.com/generate.vim',
-        'POST',
-        data
-    )
 
-    with open(os.path.expanduser('~/.vimrc'), 'w') as fh:
+def _generate_vimrc(langs):
+    params = _generate_params(langs)
+
+    conn = HTTPConnection('vim-bootstrap.appspot.com')
+    conn.request('POST', '/generate.vim', params, {})
+
+    response = conn.getresponse()
+
+    if response.status is not 200:
+        raise Exception()
+
+    return response.read()
+
+
+def update(langs):
+    content = _generate_vimrc(langs)
+
+    with open(vimrc_path(), 'w') as fh:
         fh.write(str(content))
 
-    return data, content
+    return content
+
