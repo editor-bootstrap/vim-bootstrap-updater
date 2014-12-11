@@ -26,6 +26,18 @@ def _generate_vimrc(langs):
     return response.read()
 
 
+def get_available_langs():
+    conn = HTTPConnection('vim-bootstrap.appspot.com')
+    conn.request('GET', '/langs')
+
+    response = conn.getresponse()
+
+    if response.status is not 200:
+        raise Exception()
+
+    return response.read()
+        
+
 def update(langs):
     content = _generate_vimrc(langs)
 
