@@ -14,11 +14,11 @@ class VimBootstrapUpdaterTests(unittest.TestCase):
         mock_response.read.return_value = 'fake response'
         mock_urlopen.return_value = mock_response
 
-        result = sut._generate_vimrc(['hy', 'closure'])
+        result = sut._generate_vimrc('nvim', ['hy', 'closure'])
 
         self.assertEqual(mock_urlopen.call_args, mock.call(
             'https://vim-bootstrap.appspot.com/generate.vim',
-            'langs=hy&langs=closure'))
+            'langs=hy&langs=closure&editor=nvim'))
         self.assertEqual('fake response', result)
 
     @mock.patch('vim_bootstrap_updater.urllib2.urlopen')
@@ -29,12 +29,11 @@ class VimBootstrapUpdaterTests(unittest.TestCase):
             code=404, msg="Not Found", hdrs=None, fp=None)
 
         with self.assertRaises(urllib2.HTTPError):
-            sut._generate_vimrc(['hy'])
+            sut._generate_vimrc('vim', ['hy'])
 
-    @mock.patch('vim_bootstrap_updater.vimrc_path', return_value='/tmp/.vimrc')
     @mock.patch('vim_bootstrap_updater._generate_vimrc', return_value='fake vimrc')
-    def test_update(self, mock_generate_vimrc, mock_vimrc_path):
-        result = sut.update(['hy'])
+    def test_update(self, mock_generate_vimrc):
+        result = sut.update('/tmp/.vimrc', 'vim', ['hy'])
 
         self.assertEqual('fake vimrc', result)
 

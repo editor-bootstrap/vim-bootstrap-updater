@@ -2,6 +2,7 @@
 " Add our plugin to the path
 " --------------------------------
 python import sys
+python import os
 python import vim
 python sys.path.append(vim.eval('expand("<sfile>:h")'))
 
@@ -13,19 +14,22 @@ python << endOfPython
 
 from vim_bootstrap_updater import update, get_available_langs
 
-try:
-	# read the vim_bootstrap_langs and generate the list
-	# if this variable doens't exist it will generate a
-	# list with all available languages
-	langs = vim.eval('g:vim_bootstrap_langs').split(',')
-except:
-	langs = get_available_langs().split(',')
+def vim_eval(var, default=None):
+	try:
+		return vim.eval(var)
+	except:
+		return default
+
+langs = vim_eval('g:vim_bootstrap_langs', get_available_langs()).split(',')
+runtime = os.path.basename(os.environ.get('VIM', 'vim'))
+editor = vim_eval('g:vim_bootstrap_editor', runtime)
+vimrc = os.environ.get('MYVIMRC', '~/.%src' % editor)
 
 try:
-	update(langs)
-	print '~/.vimrc succesfully updated'
+	update(vimrc, editor, langs)
+	print '%s succesfully updated' % vimrc
 except Exception as e:
-	print 'error to generate .vimrc'
+	print 'error to generate %s' % vimrc
 	print e
 
 endOfPython
