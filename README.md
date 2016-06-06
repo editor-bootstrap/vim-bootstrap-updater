@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/sherzberg/vim-bootstrap-updater.svg?branch=master)](https://travis-ci.org/sherzberg/vim-bootstrap-updater)
-[![Coverage Status](https://coveralls.io/repos/sherzberg/vim-bootstrap-updater/badge.png)](https://coveralls.io/r/sherzberg/vim-bootstrap-updater)
+[![Build Status](https://travis-ci.org/avelino/vim-bootstrap-updater.svg?branch=master)](https://travis-ci.org/avelino/vim-bootstrap-updater)
+[![Coverage Status](https://coveralls.io/repos/avelino/vim-bootstrap-updater/badge.png)](https://coveralls.io/r/avelino/vim-bootstrap-updater)
 
 # vim-bootstrap-updater
 
@@ -9,9 +9,9 @@ This is a proof of concept!
 
 ## Installation
 
-- `vim-boostsrap` is a prereq. Go [here](http://vim-bootstrap.appspot.com/) first.
+- `vim-boostsrap` is a prereq. Go [here](http://vim-bootstrap.com/) first.
 - `vim-bootstrap` uses NeoBundle so:
-  - Add `NeoBundle 'https://github.com/sherzberg/vim-bootstrap-updater'` to `.vimrc.local`
+  - Add `NeoBundle 'https://github.com/avelino/vim-bootstrap-updater'` to `.vimrc.local`
 - Run `:NeoBundleInstall`
 
 ## Usage
