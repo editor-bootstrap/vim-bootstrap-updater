@@ -36,10 +36,10 @@ vimrc = os.environ.get('MYVIMRC', '~/.%src' % editor)
 
 try:
 	update(vimrc, editor, langs)
-	print '%s succesfully updated' % vimrc
+	print('{} succesfully updated'.format(vimrc))
 except Exception as e:
-	print 'error to generate %s' % vimrc
-	print e
+	print('error to generate {}'.format(vimrc))
+	print(e)
 
 endOfPython
 else
@@ -60,9 +60,9 @@ vimrc = os.environ.get('MYVIMRC', '~/.%src' % editor)
 
 try:
 	update(vimrc, editor, langs)
-	print '%s succesfully updated' % vimrc
+	print '{0} succesfully updated'.format(vimrc)
 except Exception as e:
-	print 'error to generate %s' % vimrc
+	print 'error to generate {0}'.format(vimrc)
 	print e
 
 endOfPython
