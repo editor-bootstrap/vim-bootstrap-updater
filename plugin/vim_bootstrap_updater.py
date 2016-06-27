@@ -1,6 +1,10 @@
 import os
-import urllib
-import urllib2
+try:
+    import urllib2
+    import urllib
+except ImportError:
+    import urllib.request as urllib2
+    import urllib.parse as urllib
 
 
 def vimrc_path(editor):
@@ -18,7 +22,7 @@ def _generate_vimrc(editor, langs):
 
 def get_available_langs():
     resp = urllib2.urlopen("https://vim-bootstrap.appspot.com/langs")
-    return resp.read()
+    return resp.read().decode('utf-8')
 
 
 def update(vimrc, editor, langs):
