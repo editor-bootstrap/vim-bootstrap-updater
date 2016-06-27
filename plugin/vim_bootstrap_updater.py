@@ -16,7 +16,7 @@ def _generate_vimrc(editor, langs):
     params.append(('editor', editor))
     data = urllib.urlencode(params)
     resp = urllib2.urlopen("https://vim-bootstrap.appspot.com/generate.vim",
-                           data)
+                           data.encode('utf-8'))
     return resp.read()
 
 
@@ -26,11 +26,10 @@ def get_available_langs():
 
 
 def update(vimrc, editor, langs):
-    content = _generate_vimrc(editor, langs)
+    content = _generate_vimrc(editor, langs).decode('utf-8')
     vimrc = os.path.expanduser(vimrc)
 
     with open(vimrc, 'w') as fh:
-        fh.write(str(content))
+        fh.write(content)
 
     return content
-
