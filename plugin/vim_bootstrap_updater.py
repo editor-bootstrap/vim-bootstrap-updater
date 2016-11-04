@@ -15,13 +15,13 @@ def _generate_vimrc(editor, langs):
     params = [('langs', l.strip()) for l in langs]
     params.append(('editor', editor))
     data = urllib.urlencode(params)
-    resp = urllib2.urlopen("https://vim-bootstrap.appspot.com/generate.vim",
+    resp = urllib2.urlopen("https://vim-bootstrap.com/generate.vim",
                            data.encode('utf-8'))
     return resp.read()
 
 
 def get_available_langs():
-    resp = urllib2.urlopen("https://vim-bootstrap.appspot.com/langs")
+    resp = urllib2.urlopen("https://vim-bootstrap.com/langs")
     return resp.read().decode('utf-8')
 
 
