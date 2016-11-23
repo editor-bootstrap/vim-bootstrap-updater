@@ -1,4 +1,5 @@
 import os
+import sys
 try:
     import urllib2
     import urllib
@@ -7,6 +8,8 @@ except ImportError:
     import urllib.parse as urllib
 
 
+reload(sys)
+sys.setdefaultencoding('utf8')
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) '
     'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 '
