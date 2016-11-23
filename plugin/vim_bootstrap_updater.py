@@ -15,8 +15,19 @@ def _generate_vimrc(editor, langs):
     params = [('langs', l.strip()) for l in langs]
     params.append(('editor', editor))
     data = urllib.urlencode(params)
-    resp = urllib2.urlopen("https://vim-bootstrap.com/generate.vim",
-                           data.encode('utf-8'))
+    URL = "https://vim-bootstrap.com/generate.vim"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) '
+        'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 '
+        'Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;'
+        'q=0.8',
+        'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+        'Accept-Encoding': 'none',
+        'Accept-Language': 'en-US,en;q=0.8',
+        'Connection': 'keep-alive'}
+    req = urllib2.Request(URL, headers=headers)
+    resp = urllib2.urlopen(req, data.encode('utf-8'))
     return resp.read()
 
 
