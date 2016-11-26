@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/avelino/vim-bootstrap-updater.svg?branch=master)](https://travis-ci.org/avelino/vim-bootstrap-updater)
-[![Coverage Status](https://coveralls.io/repos/avelino/vim-bootstrap-updater/badge.png)](https://coveralls.io/r/avelino/vim-bootstrap-updater)
-
 # vim-bootstrap-updater
 
 ## Status
@@ -10,16 +7,17 @@ This is a proof of concept!
 ## Installation
 
 - `vim-boostsrap` is a prereq. Go [here](http://vim-bootstrap.com/) first.
-- `vim-bootstrap` uses NeoBundle so:
-  - Add `NeoBundle 'https://github.com/avelino/vim-bootstrap-updater'` to `.vimrc.local`
-- Run `:NeoBundleInstall`
+- Run `:PlugInstall`
 
 ## Usage
 
 Add something like `:let vim_bootstrap_langs = "python,ruby,html,javascript"` in side of your
 `.vimrc.local` file.
 
-Next, while in `vim`, just execute `:VimBootstrapUpdate`
+Also add something like `:let vim_bootstrap_editor = "vim"` in side of your
+`.vimrc.local` file.
+
+Next, while in `vim` or `nvim`, just execute `:VimBootstrapUpdate`
 
 ## License
 
