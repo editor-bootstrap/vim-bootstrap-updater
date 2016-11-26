@@ -1,4 +1,0 @@
-mock
-nose
-tox
-coverage
