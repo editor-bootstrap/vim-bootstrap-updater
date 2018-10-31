@@ -6,7 +6,7 @@ function! VimBootstrapUpdate()
    let editor = g:vim_bootstrap_editor
    let path = $MYVIMRC
    let data = 'langs='.langs.'\&editor='.editor
-   exec 'silent !\curl -fLso '.path.' http://vim-bootstrap.com/generate.vim --data '.data | redr!
+   silent exec '!curl -fLso '.path.' http://vim-bootstrap.com/generate.vim --data '.data | redr!
    echo path." sucesfully updated! "
 endfunction
 
