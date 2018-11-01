@@ -6,7 +6,8 @@ This is a proof of concept!
 
 ## Installation
 
-- `vim-boostsrap` is a prereq. Go [here](http://vim-bootstrap.com/) first.
+- `vim-bootstrap` is a prereq. Visit [vim-bootstrap.com](https://vim-bootstrap.com) first and follow the instructions
+- `curl` is a prereq
 - Run `:PlugInstall`
 
 ## Usage
