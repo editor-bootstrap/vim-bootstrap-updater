@@ -8,7 +8,7 @@ function! VimBootstrapUpdate()
    let theme = g:vim_bootstrap_theme
    let path = $MYVIMRC
    let data = 'langs='.langs.'&editor='.editor.'&theme='.theme.'&frameworks='.frams
-   silent exec '!curl -fLso '.path.' http://vim-bootstrap.com/generate.vim --data "'.data.'"' | redr!
+   silent exec '!curl -fLso '.path.' https://vim-bootstrap.com/generate.vim --data "'.data.'"' | redr!
    echo path.' sucesfully updated! '
 endfunction
 
